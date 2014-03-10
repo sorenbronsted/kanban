@@ -1,0 +1,38 @@
+<div id="Statuslist">
+  <div id="functions">
+    <form name="formdata">
+    <fieldset>
+      <legend>Funktioner</legend>
+      <label>Rapport</label>
+      <select name="report">
+        <option value="userWork">Timeforbrug pr bruger</option>
+        <option value="estimateProjects">Estimate pr projekt</option>
+        <option value="estimateTaskStates">Estimate pr opgavetilstand</option>
+        <option value="estimateEvaluation">Estimate evaluering</option>
+      </select>
+      <span id="groupBy">
+        <label class="label2">Grupperet efter</label>
+        <select name="time">
+          <option value="week">Uger</option>
+          <option value="month">Måneder</option>
+        </select>
+      </span>
+      <label class="label2">Start</label>
+      <input type="text" class="date" name="start" value="01-01-2000"/>
+      <label class="label2">Slut</label>
+      <input type="text" class="date" name="end" value="31-12-9999"/>
+      <input type="submit" name="show" value="Vis"/>
+    </fieldset>
+    </form>
+  </div>
+  <div id="list">
+    <fieldset>
+      <legend>Status</legend>
+      <table>
+        <thead>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </fieldset>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+#header {
+  clear: both;
+  background-color: #0081cb;
+  width: 100%;
+  overflow: hidden;
+}
+
+#header-title {
+  float:left;
+  font-size: 21px;
+  color: white;
+  margin-left: 10px;
+}
+
+#loader {
+  float:right;
+  padding-top: 5px;
+  padding-right: 10px;
+  visibility: hidden;
+  margin-right: 10px;
+}

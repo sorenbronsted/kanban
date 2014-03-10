@@ -1,0 +1,168 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "2106011ce92725204892e35bc95565ab",
+    "packages": [
+        {
+            "name": "ruckusing/ruckusing-migrations",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "http://dev.ufds.lan/git/ruckusing-migrations.git",
+                "reference": "98022aa5c1bccf3f905db6d6bbe3da7f1e21b46f"
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "bin": [
+                "ruckus.php"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Ruckusing": "lib/",
+                    "Task": "lib/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cody Caughlan",
+                    "email": "codycaughlan@gmail.com",
+                    "homepage": "https://github.com/ruckus/ruckusing-migrations/wiki",
+                    "role": "Project lead / Developer"
+                }
+            ],
+            "description": "Framework for generating and managing database migrations",
+            "homepage": "https://github.com/ruckus/ruckusing-migrations",
+            "keywords": [
+                "database",
+                "migrations",
+                "mysql",
+                "postgres",
+                "rake",
+                "ruckusing",
+                "task"
+            ],
+            "support": {
+                "email": "codycaughlan@gmail.com",
+                "issues": "https://github.com/ruckus/ruckusing-migrations/issues",
+                "source": "https://github.com/ruckus/ruckusing-migrations"
+            },
+            "time": "2013-06-03 07:05:26"
+        },
+        {
+            "name": "ufds/libdatabase",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "http://dev.ufds.lan/git/libdatabase.git",
+                "reference": "b6f0f04a9a5ad28050a5f9aa8abd49d18b10bd2e"
+            },
+            "require": {
+                "ruckusing/ruckusing-migrations": "dev-master"
+            },
+            "type": "library",
+            "license": [
+                "UFDS privat"
+            ],
+            "description": "Generel ORM mapper baseret på PDO",
+            "time": "2014-02-02 15:14:21"
+        },
+        {
+            "name": "ufds/libmath",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "http://dev.ufds.lan/git/libmath.git",
+                "reference": "d48977121128364bbc0a36d4924d9dbc753a898f"
+            },
+            "require": {
+                "ruckusing/ruckusing-migrations": "dev-master",
+                "ufds/libdatabase": "dev-master"
+            },
+            "type": "library",
+            "license": [
+                "UFDS privat"
+            ],
+            "description": "UFDS math collection",
+            "time": "2014-02-16 09:41:28"
+        },
+        {
+            "name": "ufds/libssoclient",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "http://dev.ufds.lan/git/libssoclient.git",
+                "reference": "920bda04b7907d1f2b2aa237a40034c06b853f50"
+            },
+            "require": {
+                "ufds/libutil": "dev-master"
+            },
+            "type": "library",
+            "license": [
+                "UFDS privat"
+            ],
+            "description": "CLient interface to Single Sign On (SSO)",
+            "time": "2014-01-30 13:42:15"
+        },
+        {
+            "name": "ufds/libutil",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "http://dev.ufds.lan/git/libutil.git",
+                "reference": "4bbffff122ecf120b405b25e5b104e7dc9c68e70"
+            },
+            "type": "library",
+            "license": [
+                "UFDS privat"
+            ],
+            "description": "Package of utils",
+            "time": "2013-09-06 06:35:14"
+        },
+        {
+            "name": "ufds/libwebui",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "http://dev.ufds.lan/git/libwebui.git",
+                "reference": "98a2b0a097e495b221a5273b4d697279df287451"
+            },
+            "type": "library",
+            "license": [
+                "UFDS privat"
+            ],
+            "description": "Generel webui i dart for apps in UFDS",
+            "time": "2013-12-19 13:37:07"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "ruckusing/ruckusing-migrations": 20,
+        "ufds/libdatabase": 20,
+        "ufds/libssoclient": 20,
+        "ufds/libutil": 20,
+        "ufds/libmath": 20,
+        "ufds/libwebui": 20
+    },
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}

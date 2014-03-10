@@ -1,0 +1,41 @@
+<div id="WorkDetail">
+  <div id="functions">
+    <form>
+      <fieldset>
+        <legend>Funktioner</legend>
+        <input type="button" name="save" value="Gem"/>
+        <input type="button" name="cancel" value="Fortryd"/>
+      </fieldset>
+    </form>
+  </div>
+  <div id="detail">
+  <form name="formdata">
+    <input type="hidden" name="uid" /> 
+    <input type="hidden" name="task_uid" /> 
+    <fieldset>
+      <legend>Timer</legend>
+      <ul>
+        <li>
+          <label>Start</label>
+          <input name="start" class="required datetime" type="text"/>
+        </li>
+        <li>
+          <label>Slut</label>
+          <input name="end" class="datetime" type="text"/>
+        </li>
+        <li>
+          <label>Timer</label>
+          <input name="hours" class="amount" type="text"/>
+        </li>
+        <li>
+          <label>User</label>
+          <select name="user_uid">
+            <option>User 1</option>
+            <option>User 2</option>
+          </select>
+        </li>
+      </ul>
+    </fieldset>
+  </form>
+  </div>
+</div>

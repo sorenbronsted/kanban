@@ -1,0 +1,61 @@
+#!/bin/sh
+
+set -e
+
+. /usr/share/debconf/confmodule
+
+db_get kanban/dbUser
+dbUser=$RET
+
+db_get kanban/dbPassword
+dbPassword=$RET
+	
+db_get kanban/ssoHost
+ssoHost=$RET
+	
+db_get kanban/virtualHostname
+vhost=$RET
+
+cd /var/www/kanban
+
+dbSetup () {
+	confFile="/etc/ufds/kanban-conf.php"
+	
+	isFixed=`grep DBUSER $confFile | wc -l`
+	if [ $isFixed -eq 0 ]
+	then
+		return
+	fi
+	
+	tmpFile="/tmp/kanban-conf.php"
+	cat $confFile | sed -e "s/DBUSER/${dbUser}/" -e "s/DBPASSWORD/${dbPassword}/" -e "s/SSOHOST/${ssoHost}/" > $tmpFile
+  mv $tmpFile $confFile
+	
+	dbExists=`echo "show databases" | mysql -u$dbUser -p$dbPassword | grep kanban | wc -l`
+	if [ $dbExists -eq 0 ]
+	then
+		mysql -u$dbUser -p$dbPassword < database/sql/create_db.sql
+	fi
+}
+
+apacheSetup () {
+	confFile="/etc/apache2/sites-available/kanban.conf"
+	
+	isFixed=`grep VHOST $confFile | wc -l`
+	if [ $isFixed -eq 0 ]
+	then
+		return
+	fi
+
+	tmpFile="/tmp/kanban.conf"
+	cat $confFile | sed -e "s/VHOST/${vhost}/" > $tmpFile
+	mv $tmpFile $confFile
+	a2ensite kanban.conf
+	a2enmod rewrite
+}
+
+#
+# Database setup
+dbSetup
+php -f vendor/bin/ruckus.php db:migrate
+apacheSetup

@@ -1,0 +1,50 @@
+<div id="UserDetail">
+  <div id="functions">
+    <form>
+      <fieldset>
+        <legend>Funktioner</legend>
+        <input type="button" name="cancel" value="Tilbage"/>
+      </fieldset>
+    </form>
+  </div>
+  <div id="detail">
+  <form name="formdata">
+    <input type="hidden" name="uid" /> 
+    <fieldset>
+      <legend>Bruger</legend>
+      <ul>
+        <li>
+          <label>Name</label>
+          <input name="name" readonly="readonly" type="text"/>
+        </li>
+        <li>
+          <label>Email</label>
+          <input name="email" readonly="readonly" type="text"/>
+        </li>
+        <li>
+          <label>Deleted</label>
+          <select name="delete">
+            <option value="0">Nej</option>
+            <option value="1">Ja</option>
+          </select>
+        </li>
+      </ul>
+    </fieldset>
+    </form>
+    <fieldset>
+      <legend>Projekter</legend>
+        <select name="project_uid">
+        </select>
+        <input name="addProject" type="button" value="+"/><br/>
+        <table id="projects">
+          <thead>
+            <tr>
+              <th class="delete">&nbsp</th>
+              <th id="name">Projekt</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+    </fieldset>
+  </div>
+</div>

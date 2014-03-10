@@ -1,0 +1,96 @@
+
+#application {
+  clear: both;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+}
+
+#content {
+  min-height: 500px;
+  width: 100%;
+  border: 2px solid black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#functions {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#list, #detail {
+  margin: 10px;  
+}
+
+#detail input {
+  width: auto;
+}
+
+#detail ul {
+  margin: 0;
+  padding: 0;
+}
+
+#detail li {
+  list-style: none;
+  margin: 0;
+  padding: 2px;
+}
+
+#detail label {
+  display: inline-block;
+  vertical-align: middle;
+  width: 130px;
+}
+
+#detail .label2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+  padding-left: 10px;
+}
+
+#detail li .top {
+  vertical-align: top;  
+}
+
+.delete {
+  width: 10px;
+}
+
+.children {
+  width: 7%;
+}
+
+.max {
+  width: 90%;
+}
+
+.case_number {
+  width: 70px;
+}
+
+.cpr  {
+  width: 85px;
+}
+
+.birthdate {
+  width: 100px;  
+}
+
+.date {
+  width: 80px;  
+}
+
+.datetime {
+  width: 130px;  
+}
+
+.user {
+  width: 200px;
+}
+
+.tags {
+  background-color: #AAEEBB;
+}

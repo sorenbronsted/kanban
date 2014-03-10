@@ -1,0 +1,33 @@
+Kanban
+ - et projektstyringsværktøji UFDS regi
+
+Det ligner meget det nuværende SCRUM værktøj, men har det fokus at det er ikke på til styring af projekter. Det skal også kunne lave tidsregistering af intern såvel eksterne kunder.
+
+Systemet har følgende entiteter:
+
+Et System har:
+ - et antal projekter.
+
+Et Projekt har:
+ - en beskrivelse
+ - en eller flere opgaver
+ - en prioritet
+
+En Opgave har:
+ - en titler
+ - en beskrivelse som fortæller i forretningstermer hvad forretningen gerne vil opnå. Denne skal være testbar.
+ - kan en kompleksitet (historie point) som fortæller det arbejde der ligger i at udføre denne opgave
+ - kan have et estimerede time forbrug, som fx bruges ved eksterne leverandører
+ - kan have en type (fx bug, værdiskabende, systemarbejde)
+ - en bruger som er opgavestiller/ejer
+ - en bruger som er den udførende
+ - en tilstand
+
+En Bruger har:
+ - et brugerid
+ - et password
+
+Et Board har:
+ - har en bruger
+ - en eller flere tilstande
+ - for hver board kan en tilstand har en begrænsning i hvor mange opgaver den kan rumme.

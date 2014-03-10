@@ -1,0 +1,19 @@
+Source: kanban
+Section: unknown
+Priority: extra
+Maintainer: Søren Brønsted <sbr@ufds.dk>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.4
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Git: git://git.debian.org/collab-maint/ras.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/ras.git;a=summary
+
+Package: kanban
+Architecture: all
+Depends: ${misc:Depends},
+ apache2, 
+ mysql-server, 
+ php5, 
+ php5-mysql,
+ libapache2-mod-php5
+Description: UFDS Kanban

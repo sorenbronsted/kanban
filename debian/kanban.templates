@@ -1,0 +1,23 @@
+Template: kanban/dbUser
+Type: string
+Description: Database User
+ The user allowed to connect to the mysql database
+
+  
+Template: kanban/dbPassword
+Type: password
+Description: Database Password
+ The password for the user allowed to connect to the mysql database
+
+
+Template: kanban/ssoHost
+Type: string
+Description: SSO host provider
+ Which SSO host provider should be used
+  
+
+Template: kanban/virtualHostname
+Type: string
+Description: Virtual hostname
+ The apache virtual hostname
+  

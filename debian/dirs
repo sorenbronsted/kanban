@@ -1,0 +1,4 @@
+var/www/kanban
+etc/ufds
+etc/apache2/sites-available
+

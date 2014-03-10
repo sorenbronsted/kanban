@@ -1,0 +1,5 @@
+name: kanban
+description: UFDS Renteadministration
+dependencies:
+  browser: any
+  json: any

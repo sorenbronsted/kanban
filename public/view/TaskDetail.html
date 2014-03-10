@@ -1,0 +1,86 @@
+<div id="TaskDetail">
+  <div id="functions">
+    <form>
+      <fieldset>
+        <legend>Funktioner</legend>
+        <input type="button" name="save" value="Gem"/>
+        <input type="button" name="cancel" value="Fortryd"/>
+      </fieldset>
+    </form>
+  </div>
+  <div id="detail">
+  <form name="formdata">
+    <input type="hidden" name="uid" /> 
+    <input type="hidden" name="project_uid" /> 
+    <fieldset>
+      <legend>Opgave</legend>
+      <ul>
+        <li>
+          <label>Titel</label>
+          <input name="title" size="100" class="required" type="text"/>
+        </li>
+        <li>
+          <label>Position</label>
+          <input name="position"  class="required amountInt" size="3"/>
+          <label class="label2">Point</label>
+          <select name="points">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="8">8</option>
+            <option value="13">13</option>
+          </select>
+          <label class="label2">Estimat (timer)</label>
+          <input name="estimate" class="required amountInt" size="5"/>
+        </li>
+        <li>
+          <label>Tags</label>
+          <input name="tags" size="100"/>
+        </li>
+        <li>
+          <label>Type</label>
+          <select name="tasktype_uid"></select>
+          <label class="label2">Tilstand</label>
+          <select name="taskstate_uid"></select>
+          <label class="label2">Bestilt af</label>
+          <select name="requester_uid"></select>
+          <label class="label2">Udføres af</label>
+          <select name="owner_uid"></select>
+        </li>
+        <li>
+          <label class="top">Beskrivelse</label>
+          <textarea name="description" cols="100" rows="5"></textarea>
+        </li>
+        <li>
+          <label>Oprettet</label>
+          <input name="created" class="datetime" readonly="readonly"/>
+          <label class="label2">Forbrugt</label>
+          <input name="used"  class="amount"  size="5" readonly="readonly"/>
+        </li>
+      </ul>
+    </fieldset>
+    </form>
+    <form name="comment">
+    <fieldset>
+      <legend>Kommentar</legend>
+      <label>Kommentar</label>
+      <input name="text" type="text" size="100"/>
+      <input name="addComment" type="button" value="tilføj"/>
+      <table id="comments">
+        <thead>
+          <tr>
+            <th class="delete">&nbsp;</th>
+            <th id="created" class="datetime">Tid</th>
+            <th id="user" class="user">Bruger</th>
+            <th id="text">Kommentar</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </fieldset>
+  </form>
+  </div>
+</div>

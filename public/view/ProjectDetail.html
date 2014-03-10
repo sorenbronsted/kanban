@@ -1,0 +1,48 @@
+<div id="ProjectDetail">
+  <div id="functions">
+    <form>
+      <fieldset>
+        <legend>Funktioner</legend>
+        <input type="button" name="save" value="Gem"/>
+        <input type="button" name="cancel" value="Fortryd"/>
+      </fieldset>
+    </form>
+  </div>
+  <div id="detail">
+  <form name="formdata">
+    <input type="hidden" name="uid" /> 
+    <fieldset>
+      <legend>Project</legend>
+      <ul>
+        <li>
+          <label>Name</label>
+          <input name="name" class="required" size="100" type="text"/>
+        </li>
+        <li>
+          <label class="top">Beskrivelse</label>
+          <textarea name="description" cols="100" rows="10"></textarea>
+        </li>
+        <li>
+          <label>Oprettet</label>
+          <input name="created" class="datetime" type="text" readonly="readonly"/>
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>Brugere</legend>
+        <select name="user_uid">
+        </select>
+        <input name="addUser" type="button" value="+"/><br/>
+        <table id="users">
+          <thead>
+            <tr>
+              <th class="delete">&nbsp</th>
+              <th id="name">User</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+    </fieldset>
+  </form>
+  </div>
+</div>
