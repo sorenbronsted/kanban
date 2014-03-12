@@ -1,3 +1,10 @@
+kanban (1.1) saucy; urgency=low
+
+  * Added debian package 
+  * Updated to newest libraries
+
+ -- Søren Brønsted <sbr@ufds.dk>  Wed, 12 Mar 2014 14:57:45 +0100
+
 kanban (1.0) stable; urgency=low
 
   * initial
