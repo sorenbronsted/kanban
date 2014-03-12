@@ -60,6 +60,6 @@ User::sync();
     </div>
 
     <script type="application/dart" src="client/main.dart"></script>
-    <script src="client/packages/browser/dart.js"></script>
+    <script src="client/dart.js"></script>
   </body>
 </html>

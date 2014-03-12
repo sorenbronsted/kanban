@@ -2,7 +2,7 @@
 
 SHELL=/bin/bash
 
-all: checkout depend migrate clean coverage package 
+all: checkout depend js migrate clean coverage package 
 	echo "Up-to-date"
 
 dist:
