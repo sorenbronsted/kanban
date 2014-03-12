@@ -1,3 +1,9 @@
+kanban (1.2) saucy; urgency=low
+
+  * Fixed issue with dart.js in symlink package directory which is not availably on dest
+
+ -- Søren Brønsted <sbr@ufds.dk>  Wed, 12 Mar 2014 15:34:37 +0100
+
 kanban (1.1) saucy; urgency=low
 
   * Added debian package 
