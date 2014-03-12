@@ -37,7 +37,7 @@ class Work extends ModelObject {
 		$sql = "select round(sum(to_seconds(end)-to_seconds(start))/3600,2) as used ".
 					 "from work where task_uid = $taskUid ".
 					 "and start is not null and end is not null";
-		$cursor = Db::query($sql);
+		$cursor = Db::query(static::$db, $sql);
 		if ($cursor->hasNext()) {
 			$v = $cursor->next();
 			return $v['used'];

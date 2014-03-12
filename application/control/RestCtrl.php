@@ -123,9 +123,7 @@ class RestCtrl {
   }
   
   private function parseUri() {
-    if (Config::restDebug) {
-      syslog(LOG_DEBUG, "uri: $this->uri");
-    }
+		DiContainer::instance()->log->debug(__CLASS__, "uri: $this->uri");
     if (empty($this->uri)) {
       throw new ErrorException("Invalid uri $this->uri");
     }

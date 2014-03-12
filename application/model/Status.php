@@ -94,7 +94,7 @@ class Status {
 	}
 	
 	private static function getData($sql, Date $start, Date $end) {
-		$cursor = Db::prepareQuery($sql, array($start, $end));
+		$cursor = Db::prepareQuery(DbObject::$db, $sql, array($start, $end));
 		$data = array();
 		while($cursor->hasNext()) {
 			$data[] = $cursor->next();

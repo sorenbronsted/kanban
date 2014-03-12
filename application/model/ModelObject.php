@@ -49,6 +49,6 @@ abstract class ModelObject extends DbObject {
 
   public static function destroyBy(array $where) {
   	//DiContainer::instance()->sso->hasRole('delete'); // This will throw an exception if not valid
-    parent::destroyBy($where);
+    parent::destroyBy($where, $db);
   }
 }

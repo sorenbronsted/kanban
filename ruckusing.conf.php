@@ -1,8 +1,8 @@
 <?php
-
-require_once "application/Config.php";
+require_once 'public/settings.php';
 
 date_default_timezone_set("Europe/Copenhagen");
+$dic = DiContainer::instance();
 
 //----------------------------
 // DATABASE CONFIGURATION
@@ -10,13 +10,13 @@ date_default_timezone_set("Europe/Copenhagen");
 return array(
   'db' => array(
       'development' => array(
-        'type'      => Config::dbDriver,
-        'host'      => Config::dbHost,
-        'port'      => 3306,
-        'database'  => Config::dbName,
-        'user'      => Config::dbUser,
-        'password'  => Config::dbPassword,
-        'charset'   => Config::dbCharset
+        'type'      => $dic->config->defaultDb_driver,
+        'host'      => $dic->config->defaultDb_host,
+        'port'      => $dic->config->defaultDb_port,
+        'database'  => $dic->config->defaultDb_name,
+        'user'      => $dic->config->defaultDb_user,
+        'password'  => $dic->config->defaultDb_password,
+        'charset'   => $dic->config->defaultDb_charset
       ),
     ),
   'ruckusing_base' => dirname(__FILE__) . '/vendor/ruckusing/ruckusing-migrations',

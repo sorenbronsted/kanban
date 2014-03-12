@@ -21,11 +21,7 @@ done
 
 #
 # Application config
-if [ -f $dest/$appdir/application/Config.php ]
-then
-  rm $dest/$appdir/application/Config.php
-fi
-cp conf/Config-sample.php $dest/etc/ufds/kanban-conf.php
+cp conf/kanban.ini $dest/etc/ufds/
 
 #
 # Apache config

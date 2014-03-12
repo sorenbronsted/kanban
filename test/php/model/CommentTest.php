@@ -12,7 +12,7 @@ class CommentTest extends BaseCrud {
 	}
 	
 	protected function tearDown() {
-		Db::exec("delete from user where uid = ".$this->user->uid);
+		Db::exec(DbObject::$db, "delete from user where uid = ".$this->user->uid);
 	}
   
 	public function __construct() {

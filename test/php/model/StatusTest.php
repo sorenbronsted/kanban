@@ -15,7 +15,7 @@ class StatusTest extends PHPUnit_Framework_TestCase {
 	}
 	
 	protected function tearDown() {
-		Db::exec("delete from work where user_uid = ".$this->user->uid." and task_uid = ".$this->task->uid);
+		Db::exec(DbObject::$db, "delete from work where user_uid = ".$this->user->uid." and task_uid = ".$this->task->uid);
 		$this->task->destroy();
 		$this->user->destroy();
 	}

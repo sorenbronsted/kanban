@@ -11,8 +11,10 @@ $paths = array(
   "vendor/ufds/libdatabase/dbobject",
   "vendor/ufds/libdatabase/types",
   "vendor/ufds/libssoclient/client",
-  "vendor/ufds/libutil/di/",
-  "vendor/ufds/libmath/math/",
+  "vendor/ufds/libutil/di",
+  "vendor/ufds/libutil/config",
+  "vendor/ufds/libutil/log",
+  "vendor/ufds/libmath/math",
   "test/php/utils",
 );
 
@@ -22,6 +24,10 @@ spl_autoload_register(function($class) {
   require("$class.php");
 });
 
-DiContainer::instance()->sso = new TestSso();
+$dic = DiContainer::instance();
+$dic->config = new Config2('test/php/utils/kanban.ini');
+$dic->log = Log::createFromConfig();
+$dic->request = new Request();
+$dic->sso = new TestSso;
 
 ?>

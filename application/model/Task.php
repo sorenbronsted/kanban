@@ -27,13 +27,13 @@ class Task extends ModelObject {
 	
 	public static function getByState($uid) {
 		$user = User::getCurrentUser();
-		$sql = "select distinct t.*
-						from task t
-						join project p on p.uid = t.project_uid
-						join userproject up on up.project_uid = p.uid
-						join user u on u.uid = up.user_uid and u.userid = '$user->userid'
-						where t.taskstate_uid = $uid
-						order by p.name";
+		$sql = "select distinct t.* ".
+					 "from task t ".
+					 "join project p on p.uid = t.project_uid ".
+					 "join userproject up on up.project_uid = p.uid ".
+					 "join user u on u.uid = up.user_uid and u.userid = '$user->userid' ".
+					 "where t.taskstate_uid = $uid ".
+					 "order by p.name";
 		return self::getObjects($sql);
 	}
 

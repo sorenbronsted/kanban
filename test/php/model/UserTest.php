@@ -18,7 +18,7 @@ class UserTest extends BaseCrud {
     $object->destroy();
     $object = User::getByUid($uid);
 		$this->assertEquals(true, $object->deleted);
-		Db::exec("delete from user where uid = $object->uid");
+		Db::exec('defaultDb', "delete from user where uid = $object->uid");
   }
 	
   protected function updateObject($object) {

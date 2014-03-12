@@ -1,9 +1,4 @@
 <?php
-setlocale(LC_ALL, 'da_DK.utf8');
-
-date_default_timezone_set("Europe/Copenhagen");
-openlog("ufds-kanban", LOG_PID | LOG_CONS, LOG_LOCAL0);
-
 
 $paths = array(
   "application",
@@ -12,6 +7,8 @@ $paths = array(
   "vendor/ufds/libdatabase/dbobject",
   "vendor/ufds/libdatabase/types",
   "vendor/ufds/libssoclient/client",
+  "vendor/ufds/libutil/config/",
+  "vendor/ufds/libutil/log/",
   "vendor/ufds/libutil/di/",
   "vendor/ufds/libmath/math/",
 );
@@ -24,5 +21,12 @@ spl_autoload_register(function($class) {
   require("$class.php");
 });
 
-DiContainer::instance()->request = new Request();
-DiContainer::instance()->sso = new SingleSignOnClient('ufds-kanban');
+setlocale(LC_ALL, 'da_DK.utf8');
+date_default_timezone_set("Europe/Copenhagen");
+openlog("ufds-kanban", LOG_PID | LOG_CONS, LOG_LOCAL0);
+
+$dic = DiContainer::instance();
+$dic->config = new Config2('/etc/ufds/kanban.ini');
+$dic->log = Log::createFromConfig();
+$dic->request = new Request();
+$dic->sso = new SingleSignOnClient('ufds-kanban');

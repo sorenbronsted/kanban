@@ -11,7 +11,7 @@ class User extends ModelObject {
 	private static $mandatories = array('userid', 'name');
 
 	public static function sync() {
-		Db::exec("update user set deleted = 1");
+		Db::exec(static::$db, "update user set deleted = 1");
 		$users = DiContainer::instance()->sso->getUsersByRole('read');
 		foreach($users as $user) {
 			$u = null;

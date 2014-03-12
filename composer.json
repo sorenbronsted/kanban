@@ -14,6 +14,10 @@
   "repositories": [
     {
       "type": "vcs",
+      "url": "http://dev.ufds.lan/git/libdatabase.git"
+    },
+    {
+      "type": "vcs",
       "url": "http://dev.ufds.lan/git/libssoclient.git"
     },
     {
