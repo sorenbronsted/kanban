@@ -135,14 +135,14 @@
             "source": {
                 "type": "git",
                 "url": "http://dev.ufds.lan/git/libwebui.git",
-                "reference": "bd07f7c0ff51456018510f375e51bfd16cf80ae8"
+                "reference": "b1ad5f97656c6defb9ca6cc8d75add8a20930c22"
             },
             "type": "library",
             "license": [
                 "UFDS privat"
             ],
             "description": "Generel webui i dart for apps in UFDS",
-            "time": "2014-02-26 20:22:15"
+            "time": "2014-03-26 11:08:01"
         }
     ],
     "packages-dev": [

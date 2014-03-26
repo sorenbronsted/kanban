@@ -20,6 +20,11 @@ do
 done
 
 #
+# In ubuntu 13.04 this information is put into kanban.conf
+# but in 12.04 it is the old way
+cp conf/htaccess $dest/$appdir/public/.htaccess
+
+#
 # Application config
 cp conf/kanban.ini $dest/etc/ufds/
 
