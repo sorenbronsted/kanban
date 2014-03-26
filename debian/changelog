@@ -1,3 +1,10 @@
+kanban (1.2ubuntu1) saucy; urgency=low
+
+  * Update to newset webui 
+  * Added a ported dataset from fulcrum
+
+ -- Søren Brønsted <sbr@ufds.dk>  Wed, 26 Mar 2014 12:11:18 +0100
+
 kanban (1.2) saucy; urgency=low
 
   * Fixed issue with dart.js in symlink package directory which is not availably on dest
