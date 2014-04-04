@@ -9401,6 +9401,28 @@ var $$ = {};
       return date + " " + H.S(time);
     },
     internal$1: function(input) {
+      var parts, tmp, t1;
+      if (input.length === 0)
+        return input;
+      parts = input.split(" ");
+      if (0 >= parts.length)
+        return H.ioore(parts, 0);
+      tmp = J.split$1$s(parts[0], "-");
+      t1 = tmp.length;
+      if (t1 !== 3)
+        return input;
+      if (0 >= t1)
+        return H.ioore(tmp, 0);
+      t1 = H.S(tmp[0]) + "-";
+      if (1 >= tmp.length)
+        return H.ioore(tmp, 1);
+      t1 = t1 + H.S(tmp[1]) + "-";
+      if (2 >= tmp.length)
+        return H.ioore(tmp, 2);
+      t1 = t1 + H.S(tmp[2]) + " ";
+      if (1 >= parts.length)
+        return H.ioore(parts, 1);
+      return t1 + H.S(parts[1]);
     }
   },
   AmountFmt: {
@@ -10184,8 +10206,11 @@ var $$ = {};
       result = [];
       t1 = $.get$Rest_instance();
       result.push(t1._execute$2("GET", "/rest/User").then$1(new X.ProjectDetailCtrl_loadTypes_closure(view)));
-      if (!J.$eq(uid, "new"))
+      if (!J.$eq(uid, "new")) {
+        view.showUsers$0();
         result.push(t1._execute$2("GET", "/rest/Project/" + H.S(uid) + "?method=getUsers").then$1(new X.ProjectDetailCtrl_loadTypes_closure0(view, uid)));
+      } else
+        view.hideUsers$0();
       return result;
     },
     addUser$1: [function(data) {
@@ -10274,6 +10299,12 @@ var $$ = {};
     onLoad$0: function(_) {
       S.BaseDetailView.prototype.onLoad$0.call(this, this);
       this.onClick$2(0, "input[name=addUser]", false);
+    },
+    hideUsers$0: function() {
+      document.querySelector("#users").hidden = true;
+    },
+    showUsers$0: function() {
+      document.querySelector("#users").hidden = false;
     },
     $isProjectDetailView: true
   },
@@ -10486,11 +10517,14 @@ var $$ = {};
       }
       result = [];
       t1 = $.get$Rest_instance();
-      result.push(t1._execute$2("GET", "/rest/TaskType").then$1(new X.TaskDetailCtrl_loadTypes_closure(view)));
-      result.push(t1._execute$2("GET", "/rest/TaskState").then$1(new X.TaskDetailCtrl_loadTypes_closure0(view)));
-      result.push(t1._execute$2("GET", "/rest/User").then$1(new X.TaskDetailCtrl_loadTypes_closure1(view)));
-      if (!J.$eq(C.JSArray_methods.get$last(parts), "new"))
+      result.push(t1._execute$2("GET", "/rest/TaskType?orderby=uid&order=asc").then$1(new X.TaskDetailCtrl_loadTypes_closure(view)));
+      result.push(t1._execute$2("GET", "/rest/TaskState?orderby=uid&order=asc").then$1(new X.TaskDetailCtrl_loadTypes_closure0(view)));
+      result.push(t1._execute$2("GET", "/rest/User?orderby=uid&order=desc").then$1(new X.TaskDetailCtrl_loadTypes_closure1(view)));
+      if (!J.$eq(C.JSArray_methods.get$last(parts), "new")) {
+        view.showComment$0();
         result.push(t1._execute$2("GET", "/rest/Comment?task_uid=" + H.S(C.JSArray_methods.get$last(parts))).then$1(new X.TaskDetailCtrl_loadTypes_closure2(view)));
+      } else
+        view.hideComment$0();
       return result;
     },
     addComment$1: [function(data) {
@@ -10602,6 +10636,12 @@ var $$ = {};
       S.UiHelper_populateTable("#comments", data, urlPrefix, null);
       this.onLinkClick$1("#comments tbody");
     },
+    hideComment$0: function() {
+      document.querySelector("form[name=comment]").hidden = true;
+    },
+    showComment$0: function() {
+      document.querySelector("form[name=comment]").hidden = false;
+    },
     $isTaskDetailView: true
   },
   TaskDetailView_setTypes_closure: {
@@ -10652,6 +10692,7 @@ var $$ = {};
       var uri, parts, t1;
       H.interceptedTypeCast(this._view, "$isTaskListView");
       if (J.contains$1$asx(S.Address_instance()._address$_current, "Project") === true) {
+        document.querySelector("[name=create]").hidden = false;
         uri = J.split$1$s(S.Address_instance()._address$_current, "#");
         if (1 >= uri.length)
           return H.ioore(uri, 1);
@@ -10661,6 +10702,7 @@ var $$ = {};
           return H.ioore(parts, 1);
         t1._execute$2("GET", "rest/Task?method=getByProjectUid&uid=" + H.S(parts[1])).then$1(new X.TaskListCtrl__getTasks_closure(this));
       } else {
+        document.querySelector("[name=create]").hidden = true;
         if (J.$eq(data, "local")) {
           t1 = this._currenTaskState;
           H.interceptedTypeCast(document.querySelector("select[name=taskstate_uid]"), "$isSelectElement").value = t1;

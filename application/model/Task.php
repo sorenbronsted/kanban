@@ -22,7 +22,7 @@ class Task extends ModelObject {
 	);
 
 	public static function getByProjectUid($uid) {
-		return self::getBy(array('project_uid' => $uid));
+		return self::getBy(array('project_uid' => $uid), array('taskstate_uid'));
 	}
 	
 	public static function getByState($uid) {
@@ -33,7 +33,7 @@ class Task extends ModelObject {
 					 "join userproject up on up.project_uid = p.uid ".
 					 "join user u on u.uid = up.user_uid and u.userid = '$user->userid' ".
 					 "where t.taskstate_uid = $uid ".
-					 "order by p.name";
+					 "order by t.position, p.name";
 		return self::getObjects($sql);
 	}
 

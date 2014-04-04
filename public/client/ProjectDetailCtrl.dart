@@ -14,8 +14,12 @@ class ProjectDetailCtrl extends BaseDetailCtrl {
     Future f1 = Rest.instance.get('/rest/User').then((data)  => view.setAllUsers(data));
     result.add(f1);
     if (uid != 'new') {
+      view.showUsers();
       Future f2 = Rest.instance.get('/rest/Project/${uid}?method=getUsers').then((data)  => view.setUsers(data, "#Project/${uid}"));
       result.add(f2);
+    }
+    else {
+      view.hideUsers();
     }
     return result;
   }

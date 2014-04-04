@@ -13,6 +13,14 @@ class ProjectDetailView extends BaseDetailView {
     super.onLoad();
     onClick("input[name=addUser]", false);
   }
+
+  void hideUsers() {
+    querySelector("#users").hidden = true;
+  }
+  
+  void showUsers() {
+    querySelector("#users").hidden = false;
+  }
   
   String getSelectedUser() => getSelectValue('user_uid');
 }

@@ -32,6 +32,7 @@ class TaskListCtrl extends BaseListCtrl {
   void _getTasks(String data) {
     var taskView = (view as TaskListView);
     if (Address.instance.current.contains('Project')) {
+      taskView.showNewButton();
       var uri = Address.instance.current.split('#');
       var parts = uri[1].split('/');
       Rest.instance.get('rest/Task?method=getByProjectUid&uid=${parts[1]}').then((data) {
@@ -39,6 +40,7 @@ class TaskListCtrl extends BaseListCtrl {
       });
     }
     else {
+      taskView.hideNewButton();
       if (data == "local") { // this method is called from this class
         taskView.taskStateUid = _currenTaskState;
       }

@@ -13,18 +13,22 @@ class TaskDetailCtrl extends BaseDetailCtrl {
       view.projectUid = parts[1];
     }
     List<Future> result = new List();
-    Future f1 = Rest.instance.get('/rest/TaskType').then((data)  => view.setTypes(data));
+    Future f1 = Rest.instance.get('/rest/TaskType?orderby=uid&order=asc').then((data)  => view.setTypes(data));
     result.add(f1);
-    Future f2 = Rest.instance.get('/rest/TaskState').then((data)  => view.setStates(data));
+    Future f2 = Rest.instance.get('/rest/TaskState?orderby=uid&order=asc').then((data)  => view.setStates(data));
     result.add(f2);
-    Future f3 = Rest.instance.get('/rest/User').then((data) {
+    Future f3 = Rest.instance.get('/rest/User?orderby=uid&order=desc').then((data) {
       view.setRequester(data);
       view.setOwner(data);
     });
     result.add(f3);
     if (parts.last != 'new') {
+      view.showComment();
       Future f4 = Rest.instance.get('/rest/Comment?task_uid=${parts.last}').then((data)  => view.setComments(data, "#Comment"));
       result.add(f4);
+    }
+    else {
+      view.hideComment();
     }
     return result;
   }

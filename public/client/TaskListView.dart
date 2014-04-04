@@ -33,6 +33,14 @@ class TaskListView extends BaseListView {
     querySelector('#stateSelector').hidden = false;
   }
   
+  void hideNewButton() {
+    querySelector('[name=create]').hidden = true;
+  }
+  
+  void showNewButton() {
+    querySelector('[name=create]').hidden = false;
+  }
+  
   void populate(List rows, String urlPrefix) {
     urlPrefix = Address.instance.getHashUrl();
     UiHelper.populateTable("#list", rows, "#${urlPrefix}", (String name, Set classes, Map row, String suggestion) {

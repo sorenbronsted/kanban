@@ -19,4 +19,11 @@ class TaskDetailView extends BaseDetailView {
   
   String get text => getInputValue('text');
 
+  void hideComment() {
+    querySelector('form[name=comment]').hidden = true;
+  }
+  
+  void showComment() {
+    querySelector('form[name=comment]').hidden = false;
+  }
 }
