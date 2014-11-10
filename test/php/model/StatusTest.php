@@ -1,9 +1,7 @@
 <?php
-require_once 'PHPUnit/Autoload.php';
 require_once 'test/settings.php';
 
 class StatusTest extends PHPUnit_Framework_TestCase {
-  protected $backupGlobals = FALSE;
 	private $user;
 	private $task;
 	

@@ -1,9 +1,7 @@
 <?php
-require_once 'PHPUnit/Autoload.php';
 require_once 'test/settings.php';
 
 class CommentTest extends BaseCrud {
-  protected $backupGlobals = FALSE;
 	private $user;
 	
 	protected function setUp() {

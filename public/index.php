@@ -1,20 +1,13 @@
 <?php
-
 require_once 'settings.php';
 
 try {
-	$request = DiContainer::instance()->request;
-	if (!$request->hasCookie('kanban')) {
-	 	$cookie = array(
-   	  'token' => base64_encode("sb:".time()),
-   		'roles' => "read"
-   	);
-		$request->setCookie('kanban', json_encode($cookie), 0);
-	}
-  DiContainer::instance()->sso->challenge("kanban");
+  $sso = new SingleSignOnClient("ufds-kanban");
+  $sso->challenge("kanban");
 }
 catch(AccessDeniedException $e) {
   header('HTTP/1.0 403 Forbidden');
+  include('unauthorized.html');
   exit;
 }
 catch(NotAuthorizedException $e) {
@@ -38,6 +31,7 @@ User::sync();
     <link rel="stylesheet" href="css/views.css" />
     <link rel="stylesheet" href="css/application.css" />
     <link rel="stylesheet" href="css/tabs.css" />
+    <link rel="stylesheet" href="css/tableheaders.css" />
   </head>
   <body>
     <div id="header">

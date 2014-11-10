@@ -1,27 +1,28 @@
 <?php
 
-$paths = array(
-  "application",
-  "application/model",
-  "application/control",
-  "vendor/ufds/libdatabase/dbobject",
-  "vendor/ufds/libdatabase/types",
-  "vendor/ufds/libssoclient/client",
-  "vendor/ufds/libutil/config/",
-  "vendor/ufds/libutil/log/",
-  "vendor/ufds/libutil/di/",
-  "vendor/ufds/libmath/math/",
-);
-
-$root = dirname(__DIR__).DIRECTORY_SEPARATOR;
-
-set_include_path(get_include_path().":".$root.implode(':'.$root, $paths));
-
 spl_autoload_register(function($class) {
-  require("$class.php");
+	$paths = array(
+		"../application/model",
+		"../application/control",
+		"../vendor/ufds/libdatabase/dbobject",
+		"../vendor/ufds/libtypes/types",
+		"../vendor/ufds/libssoclient/client",
+		"../vendor/ufds/libutil/config",
+		"../vendor/ufds/libutil/di",
+		"../vendor/ufds/libutil/log",
+		"../vendor/ufds/libmath/math",
+	);
+
+	foreach($paths as $path) {
+		$fullname = __DIR__.'/'.$path.'/'.$class.'.php';
+		if (is_file($fullname)) {
+			include($fullname);
+			return true;
+		}
+	}
+	return false;
 });
 
-setlocale(LC_ALL, 'da_DK.utf8');
 date_default_timezone_set("Europe/Copenhagen");
 openlog("ufds-kanban", LOG_PID | LOG_CONS, LOG_LOCAL0);
 
