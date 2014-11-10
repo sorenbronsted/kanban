@@ -2,8 +2,7 @@
 require_once 'settings.php';
 
 try {
-  $sso = new SingleSignOnClient("ufds-kanban");
-  $sso->challenge("kanban");
+  DiContainer::instance()->sso->challenge("kanban");
 }
 catch(AccessDeniedException $e) {
   header('HTTP/1.0 403 Forbidden');
