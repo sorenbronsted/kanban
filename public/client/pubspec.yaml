@@ -1,5 +1,5 @@
 name: kanban
-description: UFDS Renteadministration
+description: Kanban
 dependencies:
   browser: any
   json: any
