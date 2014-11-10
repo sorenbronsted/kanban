@@ -1,9 +1,15 @@
+kanban (1.5) stable; urgency=medium
+
+  * se changelog
+
+ -- Søren Brønsted <sbr@ufds.dk>  Mon, 10 Nov 2014 13:17:08 +0100
+
 kanban (1.4) stable; urgency=low
 
   * Minor changes
   * Remove generated js file from git
 
- -- Søren Brønsted <sbr@ufds.dk>  Fri, 04 Apr 2014 08:42:35 +0200
+ -- Søren Brønsted <sbr@ufds.dk>  Mon, 10 Nov 2014 13:16:46 +0100
 
 kanban (1.2ubuntu1) saucy; urgency=low
 
