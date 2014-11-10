@@ -14,7 +14,7 @@ clean:
 	bin/clean.sh
 
 test:
-	phpunit test/php
+	bin/phpunit.phar test/php
 
 migrate:
 	bin/dbmigrate.sh $(VERSION)

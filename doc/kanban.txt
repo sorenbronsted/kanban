@@ -1,7 +1,8 @@
 Kanban
  - et projektstyringsværktøji UFDS regi
 
-Det ligner meget det nuværende SCRUM værktøj, men har det fokus at det er ikke på til styring af projekter. Det skal også kunne lave tidsregistering af intern såvel eksterne kunder.
+Det ligner meget det nuværende SCRUM værktøj, men har det fokus af styring af projekter.
+Det skal også kunne lave tidsregistering af intern såvel eksterne kunder.
 
 Systemet har følgende entiteter:
 
