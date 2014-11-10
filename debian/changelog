@@ -1,3 +1,10 @@
+kanban (1.7) utopic; urgency=medium
+
+  * Added some styling
+  * Fixed error when creating work entries
+
+ -- Søren Brønsted <sbr@ufds.dk>  Mon, 10 Nov 2014 15:54:16 +0100
+
 kanban (1.6) utopic; urgency=medium
 
   * Fixed error on login
