@@ -43,7 +43,7 @@
 #detail label {
   display: inline-block;
   vertical-align: middle;
-  width: 130px;
+  width: 100px;
 }
 
 #detail .label2 {
@@ -86,7 +86,7 @@
 }
 
 .datetime {
-  width: 130px;  
+  width: 150px;  
 }
 
 .user {
