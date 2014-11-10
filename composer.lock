@@ -1,9 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "da2fc1d466102e1ce36aeedfd2489d8a",
+    "hash": "2822bef4abc0bae8276982d83cae14ae",
     "packages": [
         {
             "name": "ruckusing/ruckusing-migrations",
@@ -64,10 +65,11 @@
             "source": {
                 "type": "git",
                 "url": "http://dev.ufds.lan/git/libdatabase.git",
-                "reference": "59dbd06ad5f2662ca510d0fbdc706f629646e750"
+                "reference": "4f99b31063b455d82a31e6f7eccf5c8e5351c9f8"
             },
             "require": {
                 "ruckusing/ruckusing-migrations": "dev-master",
+                "ufds/libtypes": "dev-master",
                 "ufds/libutil": "dev-master"
             },
             "type": "library",
@@ -75,7 +77,7 @@
                 "UFDS privat"
             ],
             "description": "Generel ORM mapper baseret på PDO",
-            "time": "2014-03-12 13:18:32"
+            "time": "2014-10-16 08:46:04"
         },
         {
             "name": "ufds/libmath",
@@ -83,18 +85,17 @@
             "source": {
                 "type": "git",
                 "url": "http://dev.ufds.lan/git/libmath.git",
-                "reference": "d48977121128364bbc0a36d4924d9dbc753a898f"
+                "reference": "2fc7ae04b38aa2c1a99d77e163b6dc57d5e74b9c"
             },
             "require": {
-                "ruckusing/ruckusing-migrations": "dev-master",
-                "ufds/libdatabase": "dev-master"
+                "ufds/libtypes": "dev-master"
             },
             "type": "library",
             "license": [
                 "UFDS privat"
             ],
             "description": "UFDS math collection",
-            "time": "2014-02-16 09:41:28"
+            "time": "2014-11-07 11:00:13"
         },
         {
             "name": "ufds/libssoclient",
@@ -115,19 +116,34 @@
             "time": "2014-03-11 12:23:07"
         },
         {
+            "name": "ufds/libtypes",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "http://dev.ufds.lan/git/libtypes.git",
+                "reference": "8873168ccdb43826aafd829548a3b71729a2f60a"
+            },
+            "type": "library",
+            "license": [
+                "UFDS privat"
+            ],
+            "description": "UFDS standard types",
+            "time": "2014-10-16 08:09:37"
+        },
+        {
             "name": "ufds/libutil",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "http://dev.ufds.lan/git/libutil.git",
-                "reference": "92f1a7ecac5a696eaf310a336535883be10799c5"
+                "reference": "3c49c54ebd5666597b511af7ec7d4fe9c77a82a3"
             },
             "type": "library",
             "license": [
                 "UFDS privat"
             ],
             "description": "Package of utils",
-            "time": "2014-03-10 12:29:53"
+            "time": "2014-07-16 07:36:08"
         },
         {
             "name": "ufds/libwebui",
@@ -135,35 +151,29 @@
             "source": {
                 "type": "git",
                 "url": "http://dev.ufds.lan/git/libwebui.git",
-                "reference": "b1ad5f97656c6defb9ca6cc8d75add8a20930c22"
+                "reference": "aad62f95851265070c2be4973a9252df3cad2b65"
             },
             "type": "library",
             "license": [
                 "UFDS privat"
             ],
             "description": "Generel webui i dart for apps in UFDS",
-            "time": "2014-03-26 11:08:01"
+            "time": "2014-09-18 11:50:43"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "ruckusing/ruckusing-migrations": 20,
         "ufds/libdatabase": 20,
         "ufds/libssoclient": 20,
+        "ufds/libtypes": 20,
         "ufds/libutil": 20,
         "ufds/libmath": 20,
         "ufds/libwebui": 20
     },
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "prefer-stable": false,
+    "platform": [],
+    "platform-dev": []
 }
