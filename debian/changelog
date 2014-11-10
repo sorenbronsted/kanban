@@ -1,3 +1,11 @@
+kanban (1.6) utopic; urgency=medium
+
+  * Fixed error on login
+  * Fixed som styling
+  * Fixed no log output
+
+ -- Søren Brønsted <sbr@ufds.dk>  Mon, 10 Nov 2014 15:28:53 +0100
+
 kanban (1.5) stable; urgency=medium
 
   * se changelog
