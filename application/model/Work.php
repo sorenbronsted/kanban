@@ -54,6 +54,21 @@ class Work extends ModelObject {
 		return self::$mandatories;
 	}
 
+	public function save() {
+		if (self::hasFieldChanged('end')) {
+			$task = Task::getByUid($this->task_uid);
+			$task->setWorkedHours($this->getHours());
+		}
+		parent::save();
+	}
+	
+	public function getHours() {
+		if ($this->end != null) {
+			return round($this->end->diff($this->start) / (60 * 60), 2);
+		}
+		return 0;
+	}
+	
   protected function onJsonEncode($data) {
 		$task = Task::getByUid($this->task_uid);
 		$user = User::getByUid($this->user_uid);
@@ -63,7 +78,7 @@ class Work extends ModelObject {
 		$data['project'] = $project->name;
 		$data['hours'] = 0;
 		if ($this->end != null) {
-			$data['hours'] = round($this->end->diff($this->start) / (60 * 60), 2);
+			$data['hours'] = $this->getHours();
 		}
 		return $data;
 	}

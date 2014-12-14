@@ -25,5 +25,3 @@ class TaskState extends ModelObject {
 		return self::$properties;
 	}
 }
-
-?>

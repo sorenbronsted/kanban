@@ -1,7 +1,7 @@
 <div id="TaskList">
   <div id="functions">
     <form>
-      <fieldset>
+      <fieldset id="function">
         <legend>Funktioner</legend>
           <input type="button" name="create" value="Ny Opgave"/>
           <span id="stateSelector">
@@ -9,6 +9,15 @@
             <select name="taskstate_uid">
             </select>
           </span>
+      </fieldset>
+      <fieldset id="sum">
+        <legend>Sum</legend>
+        <label>Estimat</label>
+        <input type="text" name="estimate" value="" class="smallfield" disabled="disabled"/>
+        <label>Rest</label>
+        <input type="text" name="remainder" value="" class="smallfield"  disabled="disabled"/>
+        <label>Forbrugt</label>
+        <input type="text" name="used" value="" class="smallfield" disabled="disabled"/>
       </fieldset>
     </form>
   </div>
@@ -21,13 +30,15 @@
             <th class="delete">&nbsp;</th>
             <th class="action">Handling</th>
             <th id="Work" class="children">Timer</th>
-            <th class="edit" id="title">Titel</th>
+            <th id="title" class="edit">Titel</th>
             <th id="project">Project</th>
             <th id="type">Type</th>
             <th id="points" class="amountInt">Point</th>
             <th id="estimate" class="amount">Estimat</th>
+            <th id="remainder" class="amount">Rest</th>
             <th id="used" class="amount">Forbrugt</th>
             <th id="state">Tilstand</th>
+            <th id="date_state" class="datetime">Dato tilstand</th>
             <th id="requester">Bestilt</th>
             <th id="owner">Udføres</th>
            </tr>

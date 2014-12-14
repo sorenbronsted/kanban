@@ -4,5 +4,28 @@
 }
 
 #links {
-	float: right;
+  float: right;
+}
+
+#list {
+  clear: both;
+}
+
+#functions {
+  overflow: hidden;
+  width: 100%;
+}
+
+#function {
+  width: 70%;
+  float: left;
+}
+
+#sum {
+  width: 25%;
+  float: left;
+}
+
+#sum .smallfield {
+  width: 70px;
 }

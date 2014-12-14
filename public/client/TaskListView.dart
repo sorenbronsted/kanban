@@ -40,6 +40,12 @@ class TaskListView extends BaseListView {
   void showNewButton() {
     querySelector('[name=create]').hidden = false;
   }
+
+  void populateStat(Map data) {
+    data.forEach((name, value) {
+      setInputValue(name, Format.display(['amount'], value));  
+    });
+  }
   
   void populate(List rows, String urlPrefix) {
     urlPrefix = Address.instance.getHashUrl();

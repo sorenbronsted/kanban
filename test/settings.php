@@ -29,7 +29,7 @@ date_default_timezone_set("Europe/Copenhagen");
 openlog("ufds", LOG_PID | LOG_CONS, LOG_LOCAL0);
 
 $dic = DiContainer::instance();
-$dic->config = new Config2('test/php/utils/kanban.ini');
+$dic->config = new Config2(__DIR__.'/kanban.ini');
 $dic->log = Log::createFromConfig();
 $dic->request = new Request();
 $dic->sso = new TestSso();

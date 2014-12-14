@@ -38,6 +38,9 @@ class TaskListCtrl extends BaseListCtrl {
       Rest.instance.get('rest/Task?method=getByProjectUid&uid=${parts[1]}').then((data) {
         view.populate(data, "");
       });
+      Rest.instance.get('/rest/Task?method=getStatByProject&uid=${parts[1]}').then((data) {
+        taskView.populateStat(data);
+      });
     }
     else {
       taskView.hideNewButton();
@@ -49,6 +52,9 @@ class TaskListCtrl extends BaseListCtrl {
       }
       Rest.instance.get('rest/Task?method=getByState&uid=${_currenTaskState}').then((data) {
         view.populate(data, "");
+      });
+      Rest.instance.get('/rest/Task?method=getStatByState&uid=${_currenTaskState}').then((data) {
+        taskView.populateStat(data);
       });
     }
   }

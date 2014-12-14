@@ -37,20 +37,29 @@ class Fixtures {
 		return $object;
 	}
 
+	public static function getTaskStateHistory() {
+		$object = new TaskStateHistory();
+		$object->task_uid = 1;
+		$object->from_uid = TaskState::READY;
+		$object->to_uid = TaskState::PLANNED;
+		$object->ts_changed = new Timestamp();
+		return $object;
+	}
+
 	public static function getTask() {
 		$object = new Task();
 		$object->title = 'test';
 		$object->description = 'test';
 		$object->points = 7;
 		$object->estimate = 0;
+		$object->remainder = 0;
 		$object->position = 1;
 		$object->created = new Timestamp();
 		$object->tasktype_uid = 1;
-		$object->taskstate_uid = 1;
+		$object->taskstate_uid = TaskState::READY;
 		$object->project_uid = 1;
 		$object->owner_uid = 1;
 		$object->requester_uid = 1;
 		return $object;
-	}}
-
-?>
+	}
+}
