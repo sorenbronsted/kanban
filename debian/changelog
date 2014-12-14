@@ -1,3 +1,9 @@
+kanban (1.9) utopic; urgency=medium
+
+  * Added track of state change and som stat for project or states
+
+ -- Søren Brønsted <sbr@ufds.dk>  Sun, 14 Dec 2014 18:09:35 +0100
+
 kanban (1.8) utopic; urgency=medium
 
   * Fixed error on new work entry
