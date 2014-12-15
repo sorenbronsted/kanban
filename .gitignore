@@ -5,4 +5,4 @@ vendor
 *.autosave
 application/Config.php
 public/client/main.dart.*
-
+*.sql.gz
