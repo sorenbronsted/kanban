@@ -12,18 +12,15 @@
 }
 
 #functions {
-  overflow: hidden;
-  width: 100%;
+	display: flex;
 }
 
 #function {
-  width: 70%;
-  float: left;
+  flex-grow: 1;
 }
 
 #sum {
-  width: 25%;
-  float: left;
+  width: 31em;
 }
 
 #sum .smallfield {
