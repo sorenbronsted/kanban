@@ -1,3 +1,10 @@
+kanban (1.10) utopic; urgency=medium
+
+  * Added missing files
+  * Added some css for styling functions
+
+ -- Søren Brønsted <sbr@ufds.dk>  Tue, 16 Dec 2014 12:44:03 +0100
+
 kanban (1.9) utopic; urgency=medium
 
   * Added track of state change and som stat for project or states
