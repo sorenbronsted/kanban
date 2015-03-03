@@ -57,8 +57,6 @@ class Task extends ModelObject {
 					 "from task t ".
 					 "join project p on p.uid = t.project_uid ".
 					 "left join (select task_uid, sum((to_seconds(end)-to_seconds(start))/(60*60)) as used from work group by task_uid) w on t.uid = w.task_uid ".
-					 "join userproject up on up.project_uid = p.uid ".
-					 "join user u on u.uid = up.user_uid and u.userid = '$user->userid' ".
 					 "where t.project_uid = $projectUid ";
 		$cursor = Db::query(DbObject::$db, $sql);
 		return new DataWrapper((object)$cursor->next());

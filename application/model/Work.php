@@ -11,7 +11,7 @@ class Work extends ModelObject {
 	private static $mandatories = array('start', 'user_uid', 'task_uid');
 	
 	public static function getCurrentWork($userUid) {
-		$sql = "select * from work where user_uid = $userUid and end is null";
+		$sql = "select * from work where user_uid = $userUid and end = '0000-00-00 00:00:00' or end is null";
 		$objects = self::getObjects($sql);
 		self::verifyOne($objects);
 		return $objects[0];

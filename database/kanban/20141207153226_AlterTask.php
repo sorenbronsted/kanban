@@ -13,6 +13,9 @@ class AlterTask extends Ruckusing_Migration_Base {
 			"set t.remainder = t.estimate - ifnull(w.used,0) ".
 			"where taskstate_uid in (2,3,4)"
 		);
+		$this->execute(
+			"update task set remainder = 0 where taskstate_uid in (2,4) and remainder < 0"
+		);
 	}
 
 	public function down() {
