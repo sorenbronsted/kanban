@@ -1,3 +1,10 @@
+kanban (1.12) utopic; urgency=medium
+
+  * Frekvens analyse
+  * Fixed error on change state and edit of work
+
+ -- Søren Brønsted <sbr@ufds.dk>  Tue, 03 Mar 2015 16:14:58 +0100
+
 kanban (1.11) utopic; urgency=medium
 
   * More styling
