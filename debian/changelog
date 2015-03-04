@@ -1,3 +1,9 @@
+kanban (1.13) utopic; urgency=medium
+
+  * Added exception when trying to delete a work which is on going
+
+ -- Søren Brønsted <sbr@ufds.dk>  Wed, 04 Mar 2015 09:45:41 +0100
+
 kanban (1.12) utopic; urgency=medium
 
   * Frekvens analyse
