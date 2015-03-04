@@ -69,6 +69,13 @@ class Work extends ModelObject {
 		return 0;
 	}
 	
+	public function destroy() {
+		if ($this->end == null) {
+			throw new ApplicationException("Kan ikke slettes da arbejdet er i gang. Stop opgaven først");
+		}
+		parent::destroy();
+	}
+	
   protected function onJsonEncode($data) {
 		$task = Task::getByUid($this->task_uid);
 		$user = User::getByUid($this->user_uid);
