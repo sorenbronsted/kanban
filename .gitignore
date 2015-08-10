@@ -1,3 +1,5 @@
+.idea
+*.komodoproject
 debian/kanban
 debian/files
 debian/*debhelper.log
