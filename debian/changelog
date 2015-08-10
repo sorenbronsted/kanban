@@ -1,3 +1,10 @@
+kanban (1.14) vivid; urgency=medium
+
+  * Fixed some spelling
+  * Changed column type to allow more text
+
+ -- Søren Brønsted <sbr@ufds.dk>  Mon, 10 Aug 2015 15:12:17 +0200
+
 kanban (1.13) utopic; urgency=medium
 
   * Added exception when trying to delete a work which is on going
