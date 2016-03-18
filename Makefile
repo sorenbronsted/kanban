@@ -22,7 +22,7 @@ generate:
 	bin/generate.sh $(arg)
 
 coverage: migrate clean
-	phpunit --coverage-html doc/coverage test/php
+	bin/phpunit.phar --coverage-html doc/coverage test/php
 
 depend:
 	bin/depend.sh install
