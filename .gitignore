@@ -1,9 +1,11 @@
 .idea
 *.komodoproject
+*.autosave
+*.sql.gz
 debian/kanban
 debian/files
 debian/*debhelper*
 vendor
-*.autosave
 public/client/main.dart.*
-*.sql.gz
+public/client/.packages
+public/client/packages
