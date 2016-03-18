@@ -1,9 +1,6 @@
 <?php
 require_once 'public/settings.php';
 
-date_default_timezone_set("Europe/Copenhagen");
-$dic = DiContainer::instance();
-
 //----------------------------
 // DATABASE CONFIGURATION
 //----------------------------
@@ -22,7 +19,7 @@ return array(
   'ruckusing_base' => dirname(__FILE__) . '/vendor/ruckusing/ruckusing-migrations',
   'migrations_dir' => RUCKUSING_WORKING_BASE . '/database',
   'db_dir' => RUCKUSING_WORKING_BASE . '/db',
-  'log_dir' => '/tmp/kanban/logs',
+  'log_dir' => '/tmp/logs',
 );
 
 ?>

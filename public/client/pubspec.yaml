@@ -2,4 +2,7 @@ name: kanban
 description: Kanban
 dependencies:
   browser: any
-  json: any
+  webui:
+    git:
+      url: http://dev/git/ufds/webui.git
+      ref: v1_2

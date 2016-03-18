@@ -1,19 +1,15 @@
-.PHONY:	dist clean test migrate generate install checkout coverage depend js package update-depend
+.PHONY:	dist clean test migrate generate coverage depend js package update-depend
 
 SHELL=/bin/bash
 
-all: checkout depend js migrate clean coverage package 
+all: depend coverage package
 	echo "Up-to-date"
-
-dist:
-	dch
-#	bin/dist.sh
 
 clean:
 	rm -fr dist
 	bin/clean.sh
 
-test:
+test: migrate clean
 	bin/phpunit.phar test/php
 
 migrate:
@@ -25,13 +21,7 @@ migrate:
 generate:
 	bin/generate.sh $(arg)
 
-install:
-	bin/install.sh
-
-checkout:
-	git pull
-
-coverage:
+coverage: migrate clean
 	phpunit --coverage-html doc/coverage test/php
 
 depend:
@@ -43,5 +33,5 @@ update-depend:
 js:
 	dart2js -opublic/client/main.dart.js public/client/main.dart
 
-package:
+package: js
 	bin/package.sh

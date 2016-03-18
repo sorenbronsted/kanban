@@ -2,9 +2,8 @@
 *.komodoproject
 debian/kanban
 debian/files
-debian/*debhelper.log
+debian/*debhelper*
 vendor
 *.autosave
-application/Config.php
 public/client/main.dart.*
 *.sql.gz
