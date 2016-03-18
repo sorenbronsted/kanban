@@ -31,7 +31,7 @@ update-depend:
 	bin/depend.sh update
 
 js:
-	dart2js -opublic/client/main.dart.js public/client/main.dart
+	bin/build.sh
 
 package: js
 	bin/package.sh
