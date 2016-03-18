@@ -10,3 +10,4 @@ $dic->config = new Config2('/etc/ufds/kanban.ini');
 $dic->log = Log::createFromConfig();
 $dic->request = new Request();
 $dic->sso = new SingleSignOnClient('ufds-kanban');
+$dic->header = new Header();

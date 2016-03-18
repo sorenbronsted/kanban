@@ -3,13 +3,7 @@ library kanban;
 
 import 'dart:html';
 import 'dart:async';
-import 'package:json/json.dart';
-import '../webui/EventBus.dart';
-import '../webui/Address.dart';
-import '../webui/BaseView.dart';
-import '../webui/Rest.dart';
-import '../webui/InputValidator.dart';
-import '../webui/Formatter.dart';
+import 'package:webui/webui.dart';
 
 part 'TabView.dart';
 part 'TabCtrl.dart';
@@ -33,40 +27,30 @@ part 'StatusListView.dart';
 part 'StatusListCtrl.dart';
 
 void main() {
-  EventBus eventBus = new EventBus();
-
-  eventBus.addListener("RestRequestStart", (event) {
+  EventBus eventBus = EventBus.instance;
+  eventBus.listenOn(Rest.eventRequestStart, (event) {
     querySelector("body").style.cursor = "progress";
     querySelector("#loader img").hidden = false;
   });
-  eventBus.addListener("RestRequestDone", (event) {
+  eventBus.listenOn(Rest.eventRequestDone, (event) {
     querySelector("body").style.cursor = "auto";
     querySelector("#loader img").hidden = true;
   });
 
-  Rest.instance.eventBus = eventBus;
   Rest.instance.errorHandler = (text) {
     window.alert(text);
   };
 
-  var controllers = new List();
-  controllers.add(new TabCtrl(eventBus));
-  controllers.add(new ProjectListCtrl(eventBus));
-  controllers.add(new ProjectDetailCtrl(eventBus));
-  controllers.add(new TaskListCtrl(eventBus));
-  controllers.add(new TaskDetailCtrl(eventBus));
-  controllers.add(new UserListCtrl(eventBus));
-  controllers.add(new UserDetailCtrl(eventBus));
-  controllers.add(new WorkListCtrl(eventBus));
-  controllers.add(new WorkDetailCtrl(eventBus));
-  controllers.add(new StatusListCtrl(eventBus));
+  eventBus.register(new TabCtrl());
+  eventBus.register(new ProjectListCtrl());
+  eventBus.register(new ProjectDetailCtrl());
+  eventBus.register(new TaskListCtrl());
+  eventBus.register(new TaskDetailCtrl());
+  eventBus.register(new UserListCtrl());
+  eventBus.register(new UserDetailCtrl());
+  eventBus.register(new WorkListCtrl());
+  eventBus.register(new WorkDetailCtrl());
+  eventBus.register(new StatusListCtrl());
   
-  Address.instance.eventBus = eventBus;
-  // Check to see how we are started
-  if (window.location.href.contains("#")) {
-    Address.instance.goto(window.location.href);
-  }
-  else {
-    Address.instance.goto("Project");
-  }
+  Address.instance.goto("Project");
 }

@@ -3,7 +3,7 @@ part of kanban;
 
 class WorkListCtrl extends BaseListCtrl {
   
-  WorkListCtrl(EventBus eventBus) : super(eventBus, new WorkListView(), 'Work');
+  WorkListCtrl() : super(new WorkListView(), 'Work');
   
   populateView(WorkListView view, String urlPrefix) {
     var parts = Address.instance.getHashUrlElements();

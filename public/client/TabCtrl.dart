@@ -1,12 +1,11 @@
 
 part of kanban;
 
-class TabCtrl {
+class TabCtrl implements EventBusListener {
   var _view;
   
-  TabCtrl(EventBus eventBus) {
+  TabCtrl() {
     _view = new TabView();
-    eventBus.addListener(Address.eventAddressChanged, _display);
   }
 
   _display(event) {
@@ -18,5 +17,10 @@ class TabCtrl {
       _view.showTabs(parts.first);
       _view.selectTab(parts.first);
     }
+  }
+
+  @override
+  void register(EventBus eventBus) {
+    eventBus.listenOn(Address.eventAddressChanged, _display);
   }
 }

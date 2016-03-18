@@ -1,6 +1,6 @@
 <?php
 
-abstract class ModelObject extends DbObject {
+abstract class ModelObject extends DbObject implements RestEnable, JsonEnable {
   
   public function jsonEncode() {
     $tmp = array();
@@ -49,6 +49,6 @@ abstract class ModelObject extends DbObject {
 
   public static function destroyBy(array $where) {
   	//DiContainer::instance()->sso->hasRole('delete'); // This will throw an exception if not valid
-    parent::destroyBy($where, $db);
+    parent::destroyBy($where);
   }
 }

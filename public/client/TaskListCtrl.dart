@@ -3,7 +3,7 @@ part of kanban;
 class TaskListCtrl extends BaseListCtrl {
   String _currenTaskState;
   
-  TaskListCtrl(EventBus eventBus) : super(eventBus, new TaskListView(), 'Task') {
+  TaskListCtrl() : super(new TaskListView(), 'Task') {
     view.addHandler('taskstate_uid', _getTasks);
     view.addHandler('changeState', _changeState);
     _currenTaskState = "${TaskState.READY}";

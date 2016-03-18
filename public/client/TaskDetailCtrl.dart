@@ -2,7 +2,7 @@ part of kanban;
 
 class TaskDetailCtrl extends BaseDetailCtrl {
   
-  TaskDetailCtrl(EventBus eventBus) : super(eventBus, new TaskDetailView(), "Task") {
+  TaskDetailCtrl() : super(new TaskDetailView(), "Task") {
     view.addHandler('addComment', addComment);
     view.addHandler('delete', removeComment);
   }

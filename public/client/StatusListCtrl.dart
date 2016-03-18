@@ -1,7 +1,7 @@
 part of kanban;
 
 class StatusListCtrl extends BaseListCtrl {
-  StatusListCtrl(EventBus eventBus) : super(eventBus, new StatusListView(), 'Status') {
+  StatusListCtrl() : super(new StatusListView(), 'Status') {
     view.addHandler('show', showReport);
   }
   

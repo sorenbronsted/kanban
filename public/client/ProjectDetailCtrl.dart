@@ -2,7 +2,7 @@ part of kanban;
 
 class ProjectDetailCtrl extends BaseDetailCtrl {
   
-  ProjectDetailCtrl(EventBus eventBus) : super(eventBus, new ProjectDetailView(), "Project") {
+  ProjectDetailCtrl() : super(new ProjectDetailView(), "Project") {
     view.addHandler('addUser', addUser);
     view.addHandler('delete', removeUser);
   }

@@ -2,7 +2,7 @@ part of kanban;
 
 class WorkDetailCtrl extends BaseDetailCtrl {
   
-  WorkDetailCtrl(EventBus eventBus) : super(eventBus, new WorkDetailView(), "Work") {}
+  WorkDetailCtrl() : super(new WorkDetailView(), "Work") {}
 
   List<Future> loadTypes(WorkDetailView view) {
     var parts = Address.instance.getHashUrlElements();
