@@ -3,7 +3,7 @@
 SHELL=/bin/bash
 
 all: depend coverage package
-	echo "Up-to-date"
+	@echo "Up-to-date"
 
 clean:
 	rm -fr dist
