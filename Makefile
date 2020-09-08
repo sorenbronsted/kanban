@@ -1,28 +1,25 @@
-.PHONY:	dist clean test migrate generate coverage depend js package update-depend
+.PHONY:	clean test migrate generate coverage depend js package update-depend
 
 SHELL=/bin/bash
 
-all: depend coverage package
+all: depend migrate coverage package
 	@echo "Up-to-date"
 
 clean:
-	rm -fr dist
 	bin/clean.sh
 
-test: migrate clean
-	bin/phpunit.phar test/php
+test: clean migrate
+	bin/phpunit.phar --configuration test-conf.xml
 
 migrate:
 	bin/dbmigrate.sh $(VERSION)
 
-#
 # usage: make generate arg=<ClassName>
-#
 generate:
 	bin/generate.sh $(arg)
 
-coverage: migrate clean
-	bin/phpunit.phar --coverage-html doc/coverage test/php
+coverage:
+	bin/phpunit.phar --coverage-html doc/coverage --configuration test-conf.xml
 
 depend:
 	bin/depend.sh install
